@@ -51,11 +51,11 @@ namespace Task4
 
             var hotelStadt = new Stadt("Wien", 5);
             var hotelzimmer = new Hotel[]{ 	new Zimmer(1,"Zivan Pajkanovic"),
-                                            new Zimmer(2,"Martina Test") { Länge= 4, Breite= 4},
-                                            new Zimmer(3,"Milan Test"),
-                                            new Zimmer(4,"Dominik Test") { Länge= 5, Breite= 5},
-                                            new Zimmer(5,"David Test"),                                          
-								};
+                                       		new Zimmer(2,"Martina Test") { Länge= 4, Breite= 4},
+                                	        new Zimmer(3,"Milan Test"),
+                                               	new Zimmer(4,"Dominik Test") { Länge= 5, Breite= 5},
+                                               	new Zimmer(5,"David Test"),                                          
+					 };
             try
             {
                 hotelStadt.AddHotelPlural(hotelzimmer);
@@ -71,11 +71,11 @@ namespace Task4
         {
             var hotelStadt = new Stadt("Wien", 5);
             var hotelzimmer = new Hotel[]{ 	new Zimmer(1,"Zivan Pajkanovic"),
-                                            new Zimmer(2,"Martina Test") { Länge= 4, Breite= 4},
-                                            new Zimmer(3,"Milan Test"),
-                                            new Zimmer(4,"Dominik Test") { Länge= 5, Breite= 5},
-                                            new Zimmer(5,"David Test"),                                          
-								};
+                                                new Zimmer(2,"Martina Test") { Länge= 4, Breite= 4},
+                                                new Zimmer(3,"Milan Test"),
+                                                new Zimmer(4,"Dominik Test") { Länge= 5, Breite= 5},
+                                                new Zimmer(5,"David Test"),                                          
+					  };
 								
             hotelStadt.AddHotelPlural(hotelzimmer);
             
@@ -109,11 +109,11 @@ namespace Task4
             TestDelegate foo = () => {
                 var hotelStadt = new Stadt("Wien", 5);
                 var hotelzimmer = new Hotel[]{ 	new Zimmer(1,"Zivan Pajkanovic"),
-												new Zimmer(1,"Martina Test") { Länge= 4, Breite= 4},
-												new Zimmer(3,"Milan Test"),
-												new Zimmer(4,"Dominik Test") { Länge= 5, Breite= 5},
-												new Zimmer(5,"David Test"),                                          
-								};
+						new Zimmer(1,"Martina Test") { Länge= 4, Breite= 4},
+						new Zimmer(3,"Milan Test"),
+		 				new Zimmer(4,"Dominik Test") { Länge= 5, Breite= 5},
+						new Zimmer(5,"David Test"),                                          
+				    	     };
 								
                 hotelStadt.AddHotelPlural(hotelzimmer);
             };
