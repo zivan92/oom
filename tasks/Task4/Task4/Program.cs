@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using static System.Console;
+using System.Threading;
 
 namespace Task4
 {
@@ -17,7 +18,7 @@ namespace Task4
 												new Zimmer(2,"Martina Test") { Länge= 4, Breite= 4},
 												new Zimmer(3,"Milan Test"),
 												new Zimmer(4,"Dominik Test") { Länge= 5, Breite= 5},
-												new Zimmer(5,"David Test"),                                          
+												new Zimmer(5,"David Test") { Länge= 4, Breite= 5},                                          
 								};
             try {
                 hotelStadt.AddHotelPlural(hotelzimmer);
@@ -43,9 +44,9 @@ namespace Task4
 
         static void GibEsAus<T>(T[] arr, Action<string> foo) where T : Hotel
         {
-            foreach (var bude in arr)
+            foreach (var zimmer in arr)
             {
-                foo($" Dieses Zimmer {bude.Info} jetzt um nur {bude.Preis(100L)} !");
+                foo($" Dieses Zimmer {zimmer.Info} jetzt um nur {zimmer.Preis(100L)} !");
             }
         }
     }

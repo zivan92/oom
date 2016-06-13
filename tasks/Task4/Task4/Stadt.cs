@@ -56,12 +56,12 @@ namespace Task4
             }
         }
 
-       public void AddHotel(Hotel bude)
+       public void AddHotel(Hotel zimmer)
         {
-            if (bude is Suite)
+            if (zimmer is Suite)
                 throw new ArgumentException("Es gibt keine Suite");
 
-            Zimmer h = bude as Zimmer;
+            Zimmer h = zimmer as Zimmer;
             if (h == null)
                 throw new ArgumentException("Funktioniert nur fuer Zimmer");
 
@@ -75,11 +75,11 @@ namespace Task4
 
         public void AddHotelPlural(ICollection<Hotel> buden)
         {
-            foreach(var bude in buden)
+            foreach(var zimmer in buden)
             {
-                if (bude is Suite)
+                if (zimmer is Suite)
                     throw new ArgumentException("Es gibt keine Suite in dieser Stadt");
-                AddHotel(bude);
+                AddHotel(zimmer);
             }    
         }
     }

@@ -48,36 +48,14 @@ namespace Task4
         [Test]
         public void Test4()
         {
-            string[] arr = { "Mein", "vierter", "Test", "für", "das","Beispiel" };
-
-            var id = Utils.SpeichereObj(arr);
-            var derTest = Utils.LadeObj<string[]>( id);
-            CollectionAssert.AreEqual(arr, derTest);
-            
-            Utils.DeleteObj(id);
-        }
-
-        [Test]
-        public void Test5()
-        {
-           
-            Assert.That(() => { new Zimmer(-1); },
-                Throws.Exception.TypeOf<ArgumentException>()
-                );
-
-        }
-
-        [Test]
-        public void Test6()
-        {
 
             var hotelStadt = new Stadt("Wien", 5);
             var hotelzimmer = new Hotel[]{ 	new Zimmer(1,"Zivan Pajkanovic"),
-                                            new Zimmer(2,"Martina Test") { Länge= 4, Breite= 4},
-                                            new Zimmer(3,"Milan Test"),
-                                            new Zimmer(4,"Dominik Test") { Länge= 5, Breite= 5},
-                                            new Zimmer(5,"David Test"),                                          
-								};
+                                       		new Zimmer(2,"Martina Test") { Länge= 4, Breite= 4},
+                                	        new Zimmer(3,"Milan Test"),
+                                               	new Zimmer(4,"Dominik Test") { Länge= 5, Breite= 5},
+                                               	new Zimmer(5,"David Test"),                                          
+					 };
             try
             {
                 hotelStadt.AddHotelPlural(hotelzimmer);
@@ -87,39 +65,17 @@ namespace Task4
                 Assert.Fail();
             }
         }
-
-        [Test]
-        public void Test7()
-        {
-            TestDelegate foo = () => {
-                var hotelStadt = new Stadt("Wien", 5);
-                var hotelzimmer = new Hotel[]{ 	new Zimmer(1,"Zivan Pajkanovic"),
-												new Zimmer(1,"Martina Test") { Länge= 4, Breite= 4},
-												new Zimmer(3,"Milan Test"),
-												new Zimmer(4,"Dominik Test") { Länge= 5, Breite= 5},
-												new Zimmer(5,"David Test"),                                          
-								};
-								
-                hotelStadt.AddHotelPlural(hotelzimmer);
-            };
-
-            Assert.That(foo,
-                Throws.Exception.TypeOf<ArgumentException>().And.Message.EqualTo("Ein Zimmer mit der Nummer existiert schon !")
-                );
-           
-            
-
-        }
-        [Test]
-        public void Test8()
+      
+	[Test]
+        public void Test5()
         {
             var hotelStadt = new Stadt("Wien", 5);
             var hotelzimmer = new Hotel[]{ 	new Zimmer(1,"Zivan Pajkanovic"),
-                                            new Zimmer(2,"Martina Test") { Länge= 4, Breite= 4},
-                                            new Zimmer(3,"Milan Test"),
-                                            new Zimmer(4,"Dominik Test") { Länge= 5, Breite= 5},
-                                            new Zimmer(5,"David Test"),                                          
-								};
+                                                new Zimmer(2,"Martina Test") { Länge= 4, Breite= 4},
+                                                new Zimmer(3,"Milan Test"),
+                                                new Zimmer(4,"Dominik Test") { Länge= 5, Breite= 5},
+                                                new Zimmer(5,"David Test"),                                          
+					  };
 								
             hotelStadt.AddHotelPlural(hotelzimmer);
             
@@ -132,6 +88,48 @@ namespace Task4
             }
 
             Utils.DeleteObj(id);
+
+        }
+		
+	[Test]
+        public void Test6()
+        {
+            string[] arr = { "Mein", "vierter", "Test", "für", "das","Beispiel" };
+
+            var id = Utils.SpeichereObj(arr);
+            var derTest = Utils.LadeObj<string[]>( id);
+            CollectionAssert.AreEqual(arr, derTest);
+            
+            Utils.DeleteObj(id);
+        }
+		
+	[Test]
+        public void Test7()
+        {
+            TestDelegate foo = () => {
+                var hotelStadt = new Stadt("Wien", 5);
+                var hotelzimmer = new Hotel[]{ 	new Zimmer(1,"Zivan Pajkanovic"),
+						new Zimmer(1,"Martina Test") { Länge= 4, Breite= 4},
+						new Zimmer(3,"Milan Test"),
+		 				new Zimmer(4,"Dominik Test") { Länge= 5, Breite= 5},
+						new Zimmer(5,"David Test"),                                          
+				    	     };
+								
+                hotelStadt.AddHotelPlural(hotelzimmer);
+            };
+
+            Assert.That(foo,
+                Throws.Exception.TypeOf<ArgumentException>().And.Message.EqualTo("Ein Zimmer mit der Nummer existiert schon !")
+                );
+      		}
+			
+	[Test]
+        public void Test8()
+        {
+           
+            Assert.That(() => { new Zimmer(-1); },
+                Throws.Exception.TypeOf<ArgumentException>()
+                );
 
         }
     }
